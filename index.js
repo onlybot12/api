@@ -14,7 +14,7 @@ app.use(cookieParser());
 
 //Render the homepage
 app.get('/', (req, res) => {
-  res.render('index.html', {
+  res.render('index', {
     layout: false
   });
 });
