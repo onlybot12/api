@@ -27,7 +27,7 @@ const galau = [
   "https://telegra.ph/file/946cb25280e747511a707.mp4"
 ];
 
-app.get('/', (req, res) => {
+app.get('/galau', (req, res) => {
   const randomVideo = pickRandom(galau);
   res.json({
     author: "DannTeam",
