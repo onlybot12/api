@@ -7,6 +7,19 @@ function pickRandom(list) {
 
 const PORT = process.env.PORT || 3000;
 
+app.set('view engine', 'html');
+//app.use(expressLayout);
+app.use(express.static('public'));
+app.use(cookieParser());
+
+//Render the homepage
+app.get('/', (req, res) => {
+  res.render('index', {
+    layout: false
+  });
+});
+
+
 const galau = [
   "https://telegra.ph/file/c83205eeeecceb9e4db87.mp4",
   "https://telegra.ph/file/a001c30cafa587a3bef2c.mp4",
