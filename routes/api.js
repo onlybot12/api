@@ -1,11 +1,11 @@
 
 __path = process.cwd()
 
-var aexm = require('@lolikillers/aexm-api');
+//var aexm = require('@lolikillers/aexm-api');
 var express = require('express');
-var db = require(__path + '/database/db');
+//var db = require(__path + '/database/db');
 try {
-var lolkill = db.get("lolkill");
+//var lolkill = db.get("lolkill");
 } catch (e) {
 	console.log('')
 }
@@ -15,11 +15,11 @@ const listkey = ["Alphabot","Zeeone","ZeeoneOfc"]; // ubah apikey nya, tambah aj
 
 var axios = require('axios');
 var qs = require('qs');
-var ytdl = require('ytdl-core');
-var ytpl = require('ytpl');
+//var ytdl = require('ytdl-core');
+//var ytpl = require('ytpl');
 var secure = require('ssl-express-www');
 var cors = require('cors');
-var scrapeYt = require("scrape-yt");
+//var scrapeYt = require("scrape-yt");
 var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var request = require('request');
