@@ -1,7 +1,7 @@
 
 
 {
-  "name": "galau",
+  "name": "cekkhodam",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "lanaa",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2"
