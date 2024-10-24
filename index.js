@@ -198,10 +198,8 @@ app.get('/', (req, res) => {
   const randomKhodam = pickRandom(khodam);
   res.json({
     author: "Lana",
-    result: {
-      nama: nama,
-      khodam: randomKhodam
-    }
+    result: nama: nama, khodam:randomKhodam
+    
   
   })
 });
