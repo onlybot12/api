@@ -193,14 +193,12 @@ const khodam = [
 
 
 app.get('/', (req, res) => {
-  let nama  = req.query;
-    if (!nama) return res.json({status: false, author: "lana", message: "Masukkan Nama"});
+  //let nama  = req.query;
+  //  if (!nama) return res.json({status: false, author: "lana", message: "Masukkan Nama"});
   const randomKhodam = pickRandom(khodam);
   res.json({
     author: "Lana",
-    result: {
-      nama: nama,
-      khodam: randomKhodam,
+    result: randomKhodam,
       
     }
   
