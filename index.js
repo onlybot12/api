@@ -25,12 +25,9 @@ app.get('/', async (req, res) => {
     var list_fitur = [
       domen + "/ai/chat?q=halo",
     ]
-    var result = {
+    res.status(200).json({
       list_fitur,
       total_fitur: list_fitur.length
-    }
-    res.status(200).json({
-      result
     });
   } catch ({ message }) {
     res.status(500).json({ error: message });
