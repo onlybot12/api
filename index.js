@@ -22,12 +22,12 @@ app.use((req, res, next) => {
 // Endpoint untuk endpoint
 app.get('/', async (req, res) => {
   try {
-    var list_endpoint = [
+    var list_fitur = [
       domen + "/ai/chat?q=halo",
     ]
     var result = {
       list_fitur,
-      total_fitur: list_endpoint.length,
+      total_fitur: list_fitur.length,
     }
     res.status(200).json({
       result
