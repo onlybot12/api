@@ -25,13 +25,9 @@ app.get('/', async (req, res) => {
     var list_endpoint = [
       domen + "/ai/chat",
     ]
-    var endpoint_with_params = [
-      domen + "/ai/chat?q=",
-    ]
     var result = {
       list_endpoint,
       total_endpoint: list_endpoint.length,
-      endpoint_with_params
     }
     res.status(200).json({
       status: 200,
