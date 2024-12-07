@@ -8,7 +8,15 @@ const axios = require('axios');
 const PORT = process.env.PORT || 3000;
 
 
+// Variabel untuk menyimpan jumlah request
+let requestCount = 0;
 
+// Middleware untuk menghitung request
+app.use((req, res, next) => {
+  requestCount++;
+  console.log(`Request ke-${requestCount}: ${req.method} ${req.url}`);
+  next();
+});
 
 app.get('/', (req, res) => {
   res.json({
@@ -17,6 +25,11 @@ app.get('/', (req, res) => {
       
     })
 })
+
+// Endpoint untuk mendapatkan jumlah request
+app.get('/request-count', (req, res) => {
+  res.status(200).json({ creator: "Lana Api", count: requestCount, msg: `Jumlah request yang diterima: ${requestCount}` });
+});
 
 app.get('/ai/chat', async (req, res) => {
   let { q } = req.query;
