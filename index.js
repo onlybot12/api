@@ -27,7 +27,7 @@ app.get('/', async (req, res) => {
     ]
     var result = {
       list_fitur,
-      total_fitur: list_fitur.length,
+      total_fitur: list_fitur.length
     }
     res.status(200).json({
       result
