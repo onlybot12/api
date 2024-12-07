@@ -15,9 +15,9 @@ app.get('/', (req, res) => {
     author: "Lana",
     result: "alok",
       
-    }
+    })
   
-  })
+
 });
 
 app.listen(PORT, () => {
