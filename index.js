@@ -23,15 +23,13 @@ app.use((req, res, next) => {
 app.get('/', async (req, res) => {
   try {
     var list_endpoint = [
-      domen + "/ai/chat",
+      domen + "/ai/chat?q=halo",
     ]
     var result = {
-      list_endpoint,
-      total_endpoint: list_endpoint.length,
+      list_fitur,
+      total_fitur: list_endpoint.length,
     }
     res.status(200).json({
-      status: 200,
-      creator: "Lana x",
       result
     });
   } catch ({ message }) {
