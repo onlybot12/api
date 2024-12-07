@@ -35,7 +35,7 @@ app.get('/ai/chat', async (req, res) => {
     let result = data
     res.status(200).json({
       status: 200,
-      creator: "MannR",
+      creator: "Lana X",
       result
     })
   } catch ({ message }) {
