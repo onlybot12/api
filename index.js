@@ -18,13 +18,33 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.json({
-    author: "Lana",
-    result: "alok",
-      
-    })
-})
+
+// Endpoint untuk endpoint
+app.get('/', async (req, res) => {
+  try {
+    var list_endpoint = [
+      domen + "/ai/chat",
+    ]
+    var endpoint_with_params = [
+      domen + "/ai/chat?q=",
+    ]
+    var result = {
+      list_endpoint,
+      total_endpoint: list_endpoint.length,
+      endpoint_with_params
+    }
+    res.status(200).json({
+      status: 200,
+      creator: "Lana x",
+      result
+    });
+  } catch ({ message }) {
+    res.status(500).json({ error: message });
+  }
+});
+
+
+
 
 // Endpoint untuk mendapatkan jumlah request
 app.get('/request-count', (req, res) => {
