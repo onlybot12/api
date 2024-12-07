@@ -7,7 +7,7 @@ const axios = require('axios');
 
 const PORT = process.env.PORT || 3000;
 
-
+let domen = "https://apii.maulanaa.xyz"
 // Variabel untuk menyimpan jumlah request
 let requestCount = 0;
 
