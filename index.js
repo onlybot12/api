@@ -11,6 +11,9 @@ let domen = "https://apii.maulanaa.xyz"
 // Variabel untuk menyimpan jumlah request
 let requestCount = 0;
 
+
+
+
 // Middleware untuk menghitung request
 app.use((req, res, next) => {
   requestCount++;
