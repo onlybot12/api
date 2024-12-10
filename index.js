@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const { gptlogic } = require(path + "/scrape/gptlogic.js")
+const { gptlogic } = require("/scrape/gptlogic.js")
 const PORT = process.env.PORT || 3000;
 
 let domen = "https://apii.maulanaa.xyz"
