@@ -3,8 +3,7 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-
-
+const { gptlogic } = require(path + "/scrape/gptlogic.js")
 const PORT = process.env.PORT || 3000;
 
 let domen = "https://apii.maulanaa.xyz"
@@ -45,6 +44,30 @@ app.get('/request-count', (req, res) => {
   res.status(200).json({ creator: "Lana Api", count: requestCount, msg: `Jumlah request yang diterima: ${requestCount}` });
 });
 
+
+// Endpoint untuk ai prompt
+app.get('/ai/logic', async (req, res) => {
+  let { q, logic } = req.query;
+  if (!q) {
+    return res.status(404).json({ status: 404, creator: "Lana X", message: "Masukan Parameter q" })
+  }
+  if (!logic) {
+    return res.status(404).json({ status: 404, creator: "Lana X", message: "Masukan Parameter logic" })
+  }
+  try {
+    //let result = await AI(messages)
+    let result = await gptlogic(q, logic)
+    res.status(200).json({
+      status: 200,
+      creator: "Lana X",
+      result
+    })
+  } catch ({ message }) {
+    res.status(500).json({ error: message });
+  }
+})
+
+// Endpoint untuk ai chat
 app.get('/ai/chat', async (req, res) => {
   let { q } = req.query;
   if (!q) {
