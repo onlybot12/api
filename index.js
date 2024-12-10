@@ -55,7 +55,7 @@ app.get('/', async (req, res) => {
   try {
     var list_fitur = [
       domen + "/ai/chat?q=halo",
-      domen + "/ai/logic?q=haloo&logic=
+      domen + "/ai/logic?q=haloo&logic=",
     ]
     res.status(200).json({
       list_fitur,
