@@ -1,11 +1,7 @@
-
-
 const express = require('express');
 const app = express();
 const axios = require('axios');
 const PORT = process.env.PORT || 3000;
-
-let domen = "https://apii.maulanaa.xyz"
 // Variabel untuk menyimpan jumlah request
 let requestCount = 0;
 
@@ -49,25 +45,6 @@ async function gptlogic(message, prompt) {
     return error.message;
   }
 };
-
-// Endpoint untuk endpoint
-app.get('/', async (req, res) => {
-  try {
-    var list_fitur = [
-      domen + "/ai/chat?q=halo",
-      domen + "/ai/logic?q=haloo&logic=",
-    ]
-    res.status(200).json({
-      list_fitur,
-      total_fitur: list_fitur.length
-    });
-  } catch ({ message }) {
-    res.status(500).json({ error: message });
-  }
-});
-
-
-
 
 // Endpoint untuk mendapatkan jumlah request
 app.get('/request-count', (req, res) => {
@@ -123,11 +100,7 @@ app.get('/ai/chat', async (req, res) => {
   }
 })
 
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-
-
-
-  
